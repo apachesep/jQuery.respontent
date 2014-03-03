@@ -1,0 +1,35 @@
+{
+  "name": "jQuery.respontent",
+  "main": "src/js/jquery.respontent.min.js",
+  "version": "1.0.0",
+  "homepage": "http://respontent.frebsite.nl/",
+  "authors": [
+    "Fred Heusschen <info@frebsite.nl>"
+  ],
+  "description": "A jQuery plugin that automagically makes your user generated content responsive",
+  "keywords": [
+    "responsive",
+    "user",
+    "generated",
+    "content",
+    "rtf",
+    "tables",
+    "table",
+    "image",
+    "images",
+    "video",
+    "vieos",
+    "youtube",
+    "googlemaps"
+  ],
+  "ignore": [
+    ".jshintrc",
+    "Guardfile",
+    "index.html",
+    "*.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.5.0"
+  }
+}
