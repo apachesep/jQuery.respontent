@@ -10,10 +10,17 @@
 		<script type="text/javascript" language="javascript" src="src/js/jquery.respontent.all.min.js"></script>
 		<script type="text/javascript" language="javascript">
 			$(function() {
-				$('#examples').respontent();
+				$('#examples').respontent({
+					tables: function() {
+						if ( $(this).hasClass( 'list' ) )
+						{
+							return 'list';
+						}
+					}
+				});
 			});
 		</script>
-		<link type="text/css" media="all" rel="stylesheet" href="src/css/jquery.respontent.css" />
+		<link type="text/css" media="all" rel="stylesheet" href="src/css/jquery.respontent.all.css" />
 		<style type="text/css" media="all">
 			html, body {
 				padding: 0;
@@ -82,7 +89,6 @@
 							<th>Population</th>
 							<th>Food source</th>
 							<th>Shelter</th>
-							<th>Socialized</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -90,25 +96,44 @@
 							<td>Pedigree</td>
 							<td>Fed by guardian</td>
 							<td>Human guardian</td>
-							<td>Yes</td>
 						</tr>
 						<tr>
 							<td>Pet</td>
 							<td>Fed by guardian</td>
 							<td>Human homes</td>
-							<td>Yes</td>
 						</tr>
 						<tr>
 							<td>Semi-feral</td>
 							<td>General feeding</td>
 							<td>Buildings</td>
-							<td>Yes</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<em>Tables</em>
+				<table class="list">
+					<thead>
+						<tr>
+							<th>Population</th>
+							<th>Food source</th>
+							<th>Shelter</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Pedigree</td>
+							<td>Fed by guardian</td>
+							<td>Human guardian</td>
 						</tr>
 						<tr>
-							<td>Feral</td>
-							<td>General feeding/foraging</td>
+							<td>Pet</td>
+							<td>Fed by guardian</td>
+							<td>Human homes</td>
+						</tr>
+						<tr>
+							<td>Semi-feral</td>
+							<td>General feeding</td>
 							<td>Buildings</td>
-							<td>No</td>
 						</tr>
 					</tbody>
 				</table>
