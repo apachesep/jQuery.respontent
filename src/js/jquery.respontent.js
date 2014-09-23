@@ -1,5 +1,5 @@
 /*	
- * jQuery respontent v1.2.0
+ * jQuery respontent v1.2.1
  * @requires jQuery 1.5.0 or later
  *
  * respontent.frebsite.nl
@@ -16,7 +16,7 @@
 
 	var _PLUGIN_	= 'respontent',
 		_ABBR_		= 'respontent',
-		_VERSION_	= '1.2.0';
+		_VERSION_	= '1.2.1';
 
 
 	//	Plugin already excists

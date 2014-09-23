@@ -32,11 +32,11 @@
 			}
 			if ( typeof type == 'function' )
 			{
-				type = type( $iframe );
+				type = type.call( $iframe[ 0 ] );
 			}
 			if ( typeof type == 'undefined' )
 			{
-				type = getType( $iframe );
+				type = getType.call( $iframe[ 0 ] );
 			}
 
 			//	Apply fix
@@ -45,7 +45,6 @@
 				switch( type )
 				{
 					case 'square':
-					case 'googlemaps':
 					case 'youtube':
 						this.wrapInParent( $iframe, _c[ 'iframe-' + type ] );
 						break;
@@ -71,7 +70,7 @@
 
 
 	//	Options
-//	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = 'square' / 'yuotube' / 'maps' / function;
+//	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = false / 'square' / 'yuotube' / 'maps' / function;
 
 
 	//	Add to plugin
@@ -79,15 +78,11 @@
 
 
 	//	Private functions
-	function getType( $iframe )
+	function getType()
 	{
-		if ( $iframe.is( '[src*="maps.google"]' ) )
-		{
-			return 'googlemaps';
-		}
-		else if ( 
-			$iframe.is( '[src*="youtube.com"]' ) ||
-			$iframe.is( '[src*="youtube-nocookie.com"]' )
+		if ( 
+			$(this).is( '[src*="youtube.com"]' ) ||
+			$(this).is( '[src*="youtube-nocookie.com"]' )
 		) {
 			return 'youtube';
 		}
@@ -100,7 +95,7 @@
 	{
 		_mediaInitiated = true;
 		_c = $[ _PLUGIN_ ]._c;
-		_c.add( 'iframe-square iframe-youtube iframe-googlemaps' );
+		_c.add( 'iframe-square iframe-youtube' );
 	}
 
 })( jQuery );

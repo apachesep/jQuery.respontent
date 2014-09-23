@@ -32,7 +32,11 @@
 			}
 			if ( typeof type == 'function' )
 			{
-				type = type( $img );
+				type = type.call( $img[ 0 ] );
+			}
+			if ( typeof type == 'undefined' )
+			{
+				type = getType.call( $img[ 0 ] );
 			}
 
 			//	Apply fix
@@ -58,7 +62,7 @@
 
 
 	//	Options
-	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = true;
+//	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = true / false;
 
 
 	//	Add to plugin
@@ -66,6 +70,10 @@
 
 
 	//	Private functions
+	function getType()
+	{
+		return true;
+	}
 	function _initMedia()
 	{
 		_mediaInitiated = true;

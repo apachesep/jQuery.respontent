@@ -32,11 +32,11 @@
 			}
 			if ( typeof type == 'function' )
 			{
-				type = type( $table );
+				type = type.call( $table[ 0 ] );
 			}
 			if ( typeof type == 'undefined' )
 			{
-				type = getType( $table );
+				type = getType.call( $table[ 0 ] );
 			}
 
             if ( !$table.find( 'tbody' ).length )
@@ -104,7 +104,7 @@
 
 
 	//	Options
-//	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = 'scroll' / 'stack' / 'list' / function;
+//	$[ _PLUGIN_ ].defaults[ _MEDIA_ ] = false / 'scroll' / 'stack' / 'list' / function;
 
 
 	//	Add to plugin
@@ -112,12 +112,12 @@
 
 
 	//	Private functions
-	function getType( $table )
+	function getType()
 	{
 		if (
-			$table.find( 'th' ).length || 
-			$table.find( 'thead' ).length || 
-			$table.find( 'tfoot' ).length
+			$(this).find( 'th' ).length || 
+			$(this).find( 'thead' ).length || 
+			$(this).find( 'tfoot' ).length
 		) {
 			return 'scroll';
 		}
