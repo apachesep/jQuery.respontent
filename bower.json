@@ -1,7 +1,7 @@
 {
   "name": "jQuery.respontent",
   "main": "src/js/jquery.respontent.min.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "http://respontent.frebsite.nl/",
   "authors": [
     "Fred Heusschen <info@frebsite.nl>"
